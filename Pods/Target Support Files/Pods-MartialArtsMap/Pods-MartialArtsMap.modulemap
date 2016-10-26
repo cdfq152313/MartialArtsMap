@@ -1,0 +1,6 @@
+framework module Pods_MartialArtsMap {
+  umbrella header "Pods-MartialArtsMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
