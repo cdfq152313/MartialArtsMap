@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXc-U7-EZs" id="GqI-jv-hg8">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -75,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="873" y="-404"/>
         </scene>
-        <!--View Controller-->
+        <!--GYM Name-->
         <scene sceneID="Ssj-F1-ct8">
             <objects>
-                <viewController id="Oaw-UP-tNz" sceneMemberID="viewController">
+                <viewController id="Oaw-UP-tNz" customClass="GYMDetailViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HdD-4K-aWw"/>
                         <viewControllerLayoutGuide type="bottom" id="gL6-oS-pbQ"/>
@@ -86,12 +87,32 @@
                     <view key="view" contentMode="scaleToFill" id="fiK-X8-Vci">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bay-6h-Dot"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="top" secondItem="HdD-4K-aWw" secondAttribute="bottom" id="KdO-gr-aA6"/>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="leading" secondItem="fiK-X8-Vci" secondAttribute="leading" id="a5x-a1-LPP"/>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="height" secondItem="fiK-X8-Vci" secondAttribute="height" multiplier="2:5" id="aK0-Dh-LK1"/>
+                            <constraint firstAttribute="trailing" secondItem="bay-6h-Dot" secondAttribute="trailing" id="pTE-NE-8y3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="GYM Name" id="wAh-T2-pZX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="MhH-E7-iLg">
+                            <connections>
+                                <action selector="editAction:" destination="Oaw-UP-tNz" id="h53-nU-75q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gymNameLabel" destination="wAh-T2-pZX" id="sGY-iB-Zk6"/>
+                        <outlet property="mapView" destination="bay-6h-Dot" id="guP-Kx-7LR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-B0-Yix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="-404"/>
+            <point key="canvasLocation" x="1629.5999999999999" y="-404.34782608695656"/>
         </scene>
         <!--GYM-->
         <scene sceneID="GIb-CY-FuT">

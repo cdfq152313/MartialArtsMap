@@ -15,6 +15,7 @@
 		B097A4241DBE1D7D00094A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B097A4221DBE1D7D00094A46 /* LaunchScreen.storyboard */; };
 		B097A42C1DBE3FDD00094A46 /* GYMInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097A42B1DBE3FDD00094A46 /* GYMInfo.swift */; };
 		B097A42E1DBE470800094A46 /* GYMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097A42D1DBE470800094A46 /* GYMTableViewController.swift */; };
+		B0B9C0A81DC0CDE1006F42F7 /* GYMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C0A71DC0CDE1006F42F7 /* GYMDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B097A4251DBE1D7D00094A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B097A42B1DBE3FDD00094A46 /* GYMInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYMInfo.swift; sourceTree = "<group>"; };
 		B097A42D1DBE470800094A46 /* GYMTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYMTableViewController.swift; sourceTree = "<group>"; };
+		B0B9C0A71DC0CDE1006F42F7 /* GYMDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYMDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				B097A4251DBE1D7D00094A46 /* Info.plist */,
 				B097A42B1DBE3FDD00094A46 /* GYMInfo.swift */,
 				B097A42D1DBE470800094A46 /* GYMTableViewController.swift */,
+				B0B9C0A71DC0CDE1006F42F7 /* GYMDetailViewController.swift */,
 			);
 			path = MartialArtsMap;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B097A41C1DBE1D7D00094A46 /* ViewController.swift in Sources */,
+				B0B9C0A81DC0CDE1006F42F7 /* GYMDetailViewController.swift in Sources */,
 				B097A42C1DBE3FDD00094A46 /* GYMInfo.swift in Sources */,
 				B097A41A1DBE1D7D00094A46 /* AppDelegate.swift in Sources */,
 				B097A42E1DBE470800094A46 /* GYMTableViewController.swift in Sources */,

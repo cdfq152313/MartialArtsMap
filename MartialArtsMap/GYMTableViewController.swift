@@ -10,7 +10,7 @@ import UIKit
 
 class GYMTableViewController: UITableViewController {
     
-    var gymManager:GYMManager?
+    var gymManager = GYMManager.getInstance()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,10 @@ class GYMTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        gymManager = GYMManager.getInstance()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,12 +34,12 @@ class GYMTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return gymManager.getSectionCount()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return gymManager.getSection(0).count
     }
 
     
@@ -44,7 +47,8 @@ class GYMTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gymEntry", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Hello World"
+        let gymArray = gymManager.getSection(indexPath.section)
+        cell.textLabel?.text = gymArray[indexPath.row].name
 
         return cell
     }
@@ -66,7 +70,7 @@ class GYMTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -85,14 +89,19 @@ class GYMTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.destination is GYMDetailViewController{
+            let controller = segue.destination as! GYMDetailViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            controller.gymInfo = gymManager.getSection(indexPath.section)[indexPath.row]
+        }
     }
-    */
+ 
 
 }
