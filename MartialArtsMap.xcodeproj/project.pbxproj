@@ -132,6 +132,7 @@
 				TargetAttributes = {
 					B097A4151DBE1D7D00094A46 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8H7X36TF25;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -348,11 +349,14 @@
 			baseConfigurationReference = 4DCC537FC1638BF010F9F4CC /* Pods-MartialArtsMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = MartialArtsMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.dennycheng.MartialArtsMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,11 +365,14 @@
 			baseConfigurationReference = 52A8023BDFF291880668937F /* Pods-MartialArtsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = MartialArtsMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.dennycheng.MartialArtsMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
