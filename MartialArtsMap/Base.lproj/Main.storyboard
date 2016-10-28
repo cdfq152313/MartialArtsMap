@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dh7-nt-c4K">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,13 +89,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bay-6h-Dot"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAY-Tf-JEJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="0wN-9z-5k2"/>
+                                    <constraint firstAttribute="height" constant="30" id="GTt-pQ-6SY"/>
+                                </constraints>
+                                <state key="normal" title="網站"/>
+                                <connections>
+                                    <action selector="openURL:" destination="Oaw-UP-tNz" eventType="touchUpInside" id="DTD-59-M7e"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="294-pX-XLA">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bay-6h-Dot" firstAttribute="top" secondItem="HdD-4K-aWw" secondAttribute="bottom" id="KdO-gr-aA6"/>
-                            <constraint firstItem="bay-6h-Dot" firstAttribute="leading" secondItem="fiK-X8-Vci" secondAttribute="leading" id="a5x-a1-LPP"/>
-                            <constraint firstItem="bay-6h-Dot" firstAttribute="height" secondItem="fiK-X8-Vci" secondAttribute="height" multiplier="2:5" id="aK0-Dh-LK1"/>
-                            <constraint firstAttribute="trailing" secondItem="bay-6h-Dot" secondAttribute="trailing" id="pTE-NE-8y3"/>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="leading" secondItem="fiK-X8-Vci" secondAttribute="leadingMargin" id="0KY-Ou-rHg"/>
+                            <constraint firstItem="hAY-Tf-JEJ" firstAttribute="top" secondItem="bay-6h-Dot" secondAttribute="bottom" constant="20" id="Op7-w6-7e5"/>
+                            <constraint firstItem="gL6-oS-pbQ" firstAttribute="top" secondItem="294-pX-XLA" secondAttribute="bottom" constant="20" id="SQ1-rz-xfM"/>
+                            <constraint firstItem="294-pX-XLA" firstAttribute="top" secondItem="hAY-Tf-JEJ" secondAttribute="bottom" constant="20" id="V6l-uv-KDU"/>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="height" secondItem="fiK-X8-Vci" secondAttribute="height" multiplier="2:5" id="bNh-gd-GDx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bay-6h-Dot" secondAttribute="trailing" id="fE3-OG-CP5"/>
+                            <constraint firstItem="294-pX-XLA" firstAttribute="leading" secondItem="fiK-X8-Vci" secondAttribute="leadingMargin" id="iom-Pz-bCL"/>
+                            <constraint firstItem="hAY-Tf-JEJ" firstAttribute="leading" secondItem="fiK-X8-Vci" secondAttribute="leadingMargin" id="oli-dI-0nA"/>
+                            <constraint firstItem="294-pX-XLA" firstAttribute="trailing" secondItem="fiK-X8-Vci" secondAttribute="trailingMargin" id="tAK-Rl-CJG"/>
+                            <constraint firstItem="bay-6h-Dot" firstAttribute="top" secondItem="HdD-4K-aWw" secondAttribute="bottom" id="u10-7T-jZc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GYM Name" id="wAh-T2-pZX">
@@ -106,13 +127,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionField" destination="294-pX-XLA" id="kck-dt-blL"/>
                         <outlet property="gymNameLabel" destination="wAh-T2-pZX" id="sGY-iB-Zk6"/>
                         <outlet property="mapView" destination="bay-6h-Dot" id="guP-Kx-7LR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-B0-Yix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629.5999999999999" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="1741.5999999999999" y="-404.34782608695656"/>
         </scene>
         <!--GYM-->
         <scene sceneID="GIb-CY-FuT">

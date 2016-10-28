@@ -11,16 +11,28 @@ import MapKit
 
 class GYMDetailViewController: UIViewController {
     @IBOutlet weak var gymNameLabel: UINavigationItem!
-    
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var descriptionField: UITextView!
     
     @IBAction func editAction(_ sender: AnyObject) {
         
     }
     
+    @IBAction func openURL(_ sender: AnyObject) {
+        if let url = URL(string: gymInfo!.website){
+            UIApplication.shared.openURL(url)
+        }
+        else{
+            // TODO
+            // add alert action
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gymNameLabel.title = gymInfo?.name
+        descriptionField.text = gymInfo?.description
         initMap()
     }
 
