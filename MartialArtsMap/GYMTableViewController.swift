@@ -34,12 +34,12 @@ class GYMTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return gymManager.getSectionCount()
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return gymManager.getSection(0).count
+        return gymManager.count()
     }
 
     
@@ -47,8 +47,8 @@ class GYMTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gymEntry", for: indexPath)
 
         // Configure the cell...
-        let gymArray = gymManager.getSection(indexPath.section)
-        cell.textLabel?.text = gymArray[indexPath.row].name
+        let item = gymManager.getItem(row: indexPath.row)
+        cell.textLabel?.text = item.name
 
         return cell
     }
@@ -62,17 +62,18 @@ class GYMTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            gymManager.delete(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -99,7 +100,7 @@ class GYMTableViewController: UITableViewController {
         if segue.destination is GYMDetailViewController{
             let controller = segue.destination as! GYMDetailViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            controller.gymInfo = gymManager.getSection(indexPath.section)[indexPath.row]
+            controller.gymInfo = gymManager.getItem(row: indexPath.row)
         }
     }
  

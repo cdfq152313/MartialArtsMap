@@ -19,12 +19,15 @@ class GYMDetailViewController: UIViewController {
     }
     
     @IBAction func openURL(_ sender: AnyObject) {
-        if let url = URL(string: gymInfo!.website){
+        guard let website = gymInfo!.website else{
+            // TODO: button disappear
+            return
+        }
+        if let url = URL(string: website){
             UIApplication.shared.openURL(url)
         }
         else{
-            // TODO
-            // add alert action
+            // TODO: add alert action
         }
     }
     
@@ -69,11 +72,10 @@ class GYMDetailViewController: UIViewController {
                 self.mapView.addAnnotation(annotation)
                 
                 // set region
-                let span = MKCoordinateSpanMake(0.075, 0.075)
+                let span = MKCoordinateSpanMake(0.02, 0.02)
                 let cl2d = CLLocationCoordinate2D(latitude: (placeMark?.location?.coordinate.latitude)!, longitude: (placeMark?.location?.coordinate.longitude)!)
                 let region = MKCoordinateRegion(center: cl2d, span: span)
-                self.mapView.setRegion(region, animated: true)
-                placeMark!.location?.coordinate
+                self.mapView.setRegion(region, animated: false)
             }
             
         }

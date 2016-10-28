@@ -19,13 +19,14 @@
                     <connections>
                         <segue destination="tYr-Bf-p43" kind="relationship" relationship="viewControllers" id="XeZ-Ky-XDf"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8zX-Qi-ul4"/>
+                        <segue destination="sef-9L-Khq" kind="relationship" relationship="viewControllers" id="FUN-Cb-mAV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eM-oc-L3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-745" y="139"/>
         </scene>
-        <!--MAP-->
+        <!--Notification-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,13 +39,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MAP" id="Gtg-E9-12r"/>
+                    <tabBarItem key="tabBarItem" title="Notification" image="notification" id="Gtg-E9-12r"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="564"/>
+            <point key="canvasLocation" x="65" y="268"/>
         </scene>
-        <!--GYM LIST-->
+        <!--Settings-->
+        <scene sceneID="IXL-su-p2l">
+            <objects>
+                <viewController id="sef-9L-Khq" customClass="SettingsViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NO4-J9-jfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8f-V0-JH4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k4t-Bj-OT7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLM-oD-evB">
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetAction:" destination="sef-9L-Khq" eventType="touchUpInside" id="krG-Ao-EsL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QLM-oD-evB" firstAttribute="centerY" secondItem="k4t-Bj-OT7" secondAttribute="centerY" id="grv-Qq-htm"/>
+                            <constraint firstItem="QLM-oD-evB" firstAttribute="centerX" secondItem="k4t-Bj-OT7" secondAttribute="centerX" id="yga-vU-ZoC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="cpa-5N-2yP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BK6-bb-qEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65" y="957"/>
+        </scene>
+        <!--道館列表-->
         <scene sceneID="0jC-6n-MZF">
             <objects>
                 <tableViewController id="3RV-1e-V85" customClass="GYMTableViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXc-U7-EZs" id="GqI-jv-hg8">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -70,7 +102,7 @@
                             <outlet property="delegate" destination="3RV-1e-V85" id="7zg-K4-u1R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GYM LIST" id="P7c-IY-IuT"/>
+                    <navigationItem key="navigationItem" title="道館列表" id="P7c-IY-IuT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ud3-CM-e31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,7 +183,7 @@
         <scene sceneID="GIb-CY-FuT">
             <objects>
                 <navigationController id="tYr-Bf-p43" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="GYM" id="SBO-IX-06y"/>
+                    <tabBarItem key="tabBarItem" title="GYM" image="gym" id="SBO-IX-06y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XAd-Dg-dh6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -165,4 +197,9 @@
             <point key="canvasLocation" x="66" y="-404"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gym" width="25" height="25"/>
+        <image name="notification" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+    </resources>
 </document>
