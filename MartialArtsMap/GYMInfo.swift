@@ -25,10 +25,6 @@ class GYMManager{
         }
     }
     
-    deinit{
-        saveToFile()
-    }
-    
     private func localFileInit(){
         let data = try! Data(contentsOf: localUrl)
         if let jsonData = try! JSONSerialization.jsonObject(with: data, options: []) as?[String:Any] {
@@ -46,8 +42,26 @@ class GYMManager{
         }
     }
     
-    private func saveToFile(){
+    public func saveToFile(){
+        print("Save to file")
+
+        var array = [ [String:String] ]()
+        for item in gymArray{
+            var content = [String:String]()
+            content["name"] = item.name
+            content["description"] = item.description
+            content["imageSite"] = item.imageSite
+            content["address"] = item.address
+            content["website"] = item.description
+            array.append(content)
+        }
+        let contents = ["contents": array]
         
+        try? FileManager.default.removeItem(at: localUrl)
+        print(contents)
+        let jsonData = try? JSONSerialization.data(withJSONObject: contents, options: .prettyPrinted)
+        print (jsonData)
+        try? jsonData?.write(to: localUrl)
     }
     
     

@@ -6,7 +6,5 @@ target 'MartialArtsMap' do
   use_frameworks!
 
   # Pods for MartialArtsMap
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
   
 end
