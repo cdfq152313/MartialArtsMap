@@ -107,6 +107,10 @@ class GYMManager{
     public func delete(_ row:Int){
         gymArray.remove(at: row)
     }
+    
+    public func add(_ item:GYMInfo){
+        gymArray.append(item)
+    }
 }
 
 class GYMInfo{

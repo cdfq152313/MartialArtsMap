@@ -76,6 +76,106 @@
             </objects>
             <point key="canvasLocation" x="65" y="957"/>
         </scene>
+        <!--道館-->
+        <scene sceneID="QzG-Ei-QK4">
+            <objects>
+                <viewController id="mq6-0s-yXv" customClass="AddGYMViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OHU-Tq-tjB"/>
+                        <viewControllerLayoutGuide type="bottom" id="xX5-Qq-Ulu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AfH-px-W4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7p-dr-cvv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9B-uT-pH7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-Io-7rB">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="網站" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLg-qe-wyg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eA-Hy-GPE">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybw-qC-YtX">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBS-0L-Ql0">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TWK-vI-cpW">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9eA-Hy-GPE" firstAttribute="centerY" secondItem="W7p-dr-cvv" secondAttribute="centerY" id="1m9-FP-Q0B"/>
+                            <constraint firstItem="cLg-qe-wyg" firstAttribute="leading" secondItem="s9B-uT-pH7" secondAttribute="leading" id="4GM-Rv-lVW"/>
+                            <constraint firstItem="Ybw-qC-YtX" firstAttribute="leading" secondItem="9eA-Hy-GPE" secondAttribute="leading" id="7J7-JP-t3y"/>
+                            <constraint firstItem="s9B-uT-pH7" firstAttribute="leading" secondItem="W7p-dr-cvv" secondAttribute="leading" id="Heu-0W-SCB"/>
+                            <constraint firstItem="CBS-0L-Ql0" firstAttribute="trailing" secondItem="Ybw-qC-YtX" secondAttribute="trailing" id="MSZ-cm-mGU"/>
+                            <constraint firstItem="TWK-vI-cpW" firstAttribute="top" secondItem="fEe-Io-7rB" secondAttribute="bottom" constant="16" id="TIe-3d-iI4"/>
+                            <constraint firstItem="W7p-dr-cvv" firstAttribute="leading" secondItem="AfH-px-W4P" secondAttribute="leadingMargin" constant="20" id="VNJ-AF-0FV"/>
+                            <constraint firstItem="Ybw-qC-YtX" firstAttribute="centerY" secondItem="s9B-uT-pH7" secondAttribute="centerY" id="VVV-rb-l2C"/>
+                            <constraint firstItem="TWK-vI-cpW" firstAttribute="trailing" secondItem="9eA-Hy-GPE" secondAttribute="trailing" id="XdY-1s-SrD"/>
+                            <constraint firstItem="s9B-uT-pH7" firstAttribute="top" secondItem="W7p-dr-cvv" secondAttribute="bottom" constant="20" id="ZaX-7V-p9d"/>
+                            <constraint firstItem="xX5-Qq-Ulu" firstAttribute="top" secondItem="TWK-vI-cpW" secondAttribute="bottom" constant="20" id="cuy-iR-pTa"/>
+                            <constraint firstItem="TWK-vI-cpW" firstAttribute="leading" secondItem="fEe-Io-7rB" secondAttribute="leading" id="fXt-5w-Cz3"/>
+                            <constraint firstItem="fEe-Io-7rB" firstAttribute="leading" secondItem="cLg-qe-wyg" secondAttribute="leading" id="gJz-kq-6sI"/>
+                            <constraint firstItem="CBS-0L-Ql0" firstAttribute="leading" secondItem="Ybw-qC-YtX" secondAttribute="leading" id="hUO-Ca-PBN"/>
+                            <constraint firstItem="W7p-dr-cvv" firstAttribute="top" secondItem="OHU-Tq-tjB" secondAttribute="bottom" constant="40" id="jxZ-bK-hrA"/>
+                            <constraint firstItem="Ybw-qC-YtX" firstAttribute="trailing" secondItem="9eA-Hy-GPE" secondAttribute="trailing" id="pb0-7f-Zok"/>
+                            <constraint firstItem="fEe-Io-7rB" firstAttribute="top" secondItem="cLg-qe-wyg" secondAttribute="bottom" constant="20" id="r6E-Tl-UJb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9eA-Hy-GPE" secondAttribute="trailing" constant="20" id="sLD-Ed-ms5"/>
+                            <constraint firstItem="CBS-0L-Ql0" firstAttribute="centerY" secondItem="cLg-qe-wyg" secondAttribute="centerY" id="ugC-Xn-tZq"/>
+                            <constraint firstItem="cLg-qe-wyg" firstAttribute="top" secondItem="s9B-uT-pH7" secondAttribute="bottom" constant="20" id="um6-Cp-nu9"/>
+                            <constraint firstItem="9eA-Hy-GPE" firstAttribute="leading" secondItem="W7p-dr-cvv" secondAttribute="trailing" constant="20" id="xTP-HY-D2v"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="lIa-u0-92w"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="道館" id="E3a-dx-S0e">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="OXi-an-LCF">
+                            <connections>
+                                <action selector="okAction:" destination="mq6-0s-yXv" id="IHK-qC-kfy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="gymAddress" destination="Ybw-qC-YtX" id="JEj-Vq-IsE"/>
+                        <outlet property="gymDescription" destination="TWK-vI-cpW" id="zJF-DE-tGK"/>
+                        <outlet property="gymName" destination="9eA-Hy-GPE" id="aaf-Sl-qSF"/>
+                        <outlet property="gymWebsite" destination="CBS-0L-Ql0" id="pZU-1G-L56"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcE-Pf-CAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="-1047.5262368815593"/>
+        </scene>
         <!--道館列表-->
         <scene sceneID="0jC-6n-MZF">
             <objects>
@@ -89,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXc-U7-EZs" id="GqI-jv-hg8">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -102,7 +202,13 @@
                             <outlet property="delegate" destination="3RV-1e-V85" id="7zg-K4-u1R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="道館列表" id="P7c-IY-IuT"/>
+                    <navigationItem key="navigationItem" title="道館列表" id="P7c-IY-IuT">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="V2J-rx-O77">
+                            <connections>
+                                <segue destination="mq6-0s-yXv" kind="show" id="7MH-C6-1R7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ud3-CM-e31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
