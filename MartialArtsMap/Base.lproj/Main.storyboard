@@ -154,9 +154,7 @@
                             <constraint firstItem="9eA-Hy-GPE" firstAttribute="leading" secondItem="W7p-dr-cvv" secondAttribute="trailing" constant="20" id="xTP-HY-D2v"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="lIa-u0-92w"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="道館" id="E3a-dx-S0e">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="OXi-an-LCF">
                             <connections>
@@ -174,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CcE-Pf-CAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="-1047.5262368815593"/>
+            <point key="canvasLocation" x="1742" y="-1057"/>
         </scene>
         <!--道館列表-->
         <scene sceneID="0jC-6n-MZF">
@@ -272,6 +270,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="MhH-E7-iLg">
                             <connections>
                                 <action selector="editAction:" destination="Oaw-UP-tNz" id="h53-nU-75q"/>
+                                <segue destination="mq6-0s-yXv" kind="show" id="Irk-X8-wuw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -308,4 +307,7 @@
         <image name="notification" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Irk-X8-wuw"/>
+    </inferredMetricsTieBreakers>
 </document>

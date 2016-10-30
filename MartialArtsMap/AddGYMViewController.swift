@@ -19,6 +19,20 @@ class AddGYMViewController: UIViewController {
     
     var gymInfo:GYMInfo?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initView()
+    }
+    
+    func initView(){
+        if gymInfo != nil{
+            gymName.text = gymInfo?.name
+            gymDescription.text = gymInfo?.description
+            gymAddress.text = gymInfo?.address
+            gymWebsite.text = gymInfo?.website
+        }
+    }
+    
     @IBAction func okAction(_ sender: AnyObject) {
         if gymInfo != nil{
             gymInfo?.name = gymName.text

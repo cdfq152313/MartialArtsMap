@@ -14,6 +14,9 @@ class GYMDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var descriptionField: UITextView!
     
+    var gymInfo:GYMInfo?
+    let geoCoder = CLGeocoder()
+    
     @IBAction func editAction(_ sender: AnyObject) {
         
     }
@@ -34,6 +37,10 @@ class GYMDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
         gymNameLabel.title = gymInfo?.name
         descriptionField.text = gymInfo?.description
         initMap()
@@ -43,9 +50,6 @@ class GYMDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    var gymInfo:GYMInfo?
-    let geoCoder = CLGeocoder()
     
     func initMap(){
         guard let address = gymInfo?.address else{
@@ -81,13 +85,15 @@ class GYMDetailViewController: UIViewController {
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.destination is AddGYMViewController{
+            let controller = segue.destination as! AddGYMViewController
+            controller.gymInfo = gymInfo
+        }
     }
-    */
+ 
 }
