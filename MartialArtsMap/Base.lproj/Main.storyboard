@@ -187,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXc-U7-EZs" id="GqI-jv-hg8">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -200,13 +200,10 @@
                             <outlet property="delegate" destination="3RV-1e-V85" id="7zg-K4-u1R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="道館列表" id="P7c-IY-IuT">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="V2J-rx-O77">
-                            <connections>
-                                <segue destination="mq6-0s-yXv" kind="show" id="7MH-C6-1R7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="道館列表" id="P7c-IY-IuT"/>
+                    <connections>
+                        <segue destination="mq6-0s-yXv" kind="show" identifier="addGYM" id="FT4-7D-uMm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ud3-CM-e31" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,6 +305,6 @@
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Irk-X8-wuw"/>
+        <segue reference="FT4-7D-uMm"/>
     </inferredMetricsTieBreakers>
 </document>

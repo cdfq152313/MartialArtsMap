@@ -111,6 +111,14 @@ class GYMManager{
     public func add(_ item:GYMInfo){
         gymArray.append(item)
     }
+    
+    public func insert(row:Int, item:GYMInfo){
+        gymArray.insert(item, at: row)
+    }
+    
+    public func swapRow(_ row1:Int,_ row2:Int){
+        swap(&gymArray[row1], &gymArray[row2])
+    }
 }
 
 class GYMInfo{

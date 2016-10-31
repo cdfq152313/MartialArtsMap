@@ -18,7 +18,7 @@ class GYMTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,41 +54,53 @@ class GYMTableViewController: UITableViewController {
     }
  
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
     
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            gymManager.delete(indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let addAction = UITableViewRowAction(style: .normal, title: "insert") { (action, indexPath) in
+            self.performSegue(withIdentifier: "addGYM", sender: nil)
         }
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "delete") { (action, indexPath) in
+            self.gymManager.delete(indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        return [addAction, deleteAction]
     }
+//    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            gymManager.delete(indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            tableView.insertRows(at: [indexPath], with: .fade)
+//        }
+//    }
     
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let item = gymManager.getItem(row: fromIndexPath.row)
+        gymManager.delete(fromIndexPath.row)
+        gymManager.insert(row: to.row, item: item)
     }
-    */
+ 
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+ 
 
     
     // MARK: - Navigation
