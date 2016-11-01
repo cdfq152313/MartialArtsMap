@@ -7,6 +7,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--通知列表-->
+        <scene sceneID="Ggi-8e-8N2">
+            <objects>
+                <tableViewController id="wzY-9Y-4aW" customClass="NotiTableViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7t5-wx-n8p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notiCell" id="Fmn-K4-rgV">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fmn-K4-rgV" id="wYE-Gu-WzE">
+                                    <frame key="frameInset" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wzY-9Y-4aW" id="3yr-IY-NHL"/>
+                            <outlet property="delegate" destination="wzY-9Y-4aW" id="HEs-AE-cmZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通知列表" id="GDt-fV-BF1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S3F-Pt-RX7">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="02E-uJ-xiU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1CX-If-QIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="285"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jRf-uP-T5Q">
             <objects>
@@ -18,7 +53,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tYr-Bf-p43" kind="relationship" relationship="viewControllers" id="XeZ-Ky-XDf"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8zX-Qi-ul4"/>
+                        <segue destination="2L0-Wm-xj8" kind="relationship" relationship="viewControllers" id="6Vp-A3-R2b"/>
                         <segue destination="sef-9L-Khq" kind="relationship" relationship="viewControllers" id="FUN-Cb-mAV"/>
                     </connections>
                 </tabBarController>
@@ -26,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-745" y="139"/>
         </scene>
-        <!--Notification-->
+        <!--通知-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddNotiViewController" customModule="MartialArtsMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,13 +72,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gml-pY-ggO">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="0Fo-y2-Alo"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="499672923.16421098">
+                                    <!--2016-11-01 06:02:03 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dje-C2-Enk">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iti-nn-jJP">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="細節" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXO-hr-zBr">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cPL-qh-m1X">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cPL-qh-m1X" firstAttribute="leading" secondItem="dje-C2-Enk" secondAttribute="leading" id="0MA-lH-BfS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iti-nn-jJP" secondAttribute="trailing" constant="20" id="0z7-dR-eKM"/>
+                            <constraint firstItem="gml-pY-ggO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9DW-pE-vgg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cPL-qh-m1X" secondAttribute="bottom" constant="20" id="APS-je-O9Q"/>
+                            <constraint firstItem="jXO-hr-zBr" firstAttribute="top" secondItem="dje-C2-Enk" secondAttribute="bottom" constant="20" id="CW0-O8-6l2"/>
+                            <constraint firstItem="jXO-hr-zBr" firstAttribute="leading" secondItem="dje-C2-Enk" secondAttribute="leading" id="Da7-c4-zXj"/>
+                            <constraint firstItem="cPL-qh-m1X" firstAttribute="trailing" secondItem="iti-nn-jJP" secondAttribute="trailing" id="H2P-gs-rqV"/>
+                            <constraint firstAttribute="trailing" secondItem="gml-pY-ggO" secondAttribute="trailing" id="HQ0-L4-DE7"/>
+                            <constraint firstItem="cPL-qh-m1X" firstAttribute="top" secondItem="jXO-hr-zBr" secondAttribute="bottom" constant="49" id="Jz8-3g-6VF"/>
+                            <constraint firstItem="iti-nn-jJP" firstAttribute="centerY" secondItem="dje-C2-Enk" secondAttribute="centerY" id="PTl-mZ-VIH"/>
+                            <constraint firstItem="dje-C2-Enk" firstAttribute="top" secondItem="gml-pY-ggO" secondAttribute="bottom" constant="20" id="VHA-Ly-7tj"/>
+                            <constraint firstItem="iti-nn-jJP" firstAttribute="leading" secondItem="dje-C2-Enk" secondAttribute="trailing" constant="20" id="VtF-l8-gVl"/>
+                            <constraint firstItem="dje-C2-Enk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bEV-iE-2I1"/>
+                            <constraint firstItem="iti-nn-jJP" firstAttribute="leading" secondItem="dje-C2-Enk" secondAttribute="trailing" constant="20" id="fKZ-pM-kEk"/>
+                            <constraint firstItem="gml-pY-ggO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ftP-64-lvn"/>
+                            <constraint firstItem="jXO-hr-zBr" firstAttribute="trailing" secondItem="dje-C2-Enk" secondAttribute="trailing" id="s3u-UO-nQN"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notification" image="notification" id="Gtg-E9-12r"/>
+                    <navigationItem key="navigationItem" title="通知" id="dfZ-dg-evk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fT8-OD-mpm">
+                            <connections>
+                                <action selector="doneAction:" destination="BYZ-38-t0r" id="o3G-vt-c9Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myDatePicker" destination="gml-pY-ggO" id="Qth-Nx-J69"/>
+                        <outlet property="myDetail" destination="cPL-qh-m1X" id="K2x-Xv-Xwe"/>
+                        <outlet property="myEvent" destination="iti-nn-jJP" id="nab-Ci-QgD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="268"/>
+            <point key="canvasLocation" x="1741.5999999999999" y="284.70764617691157"/>
         </scene>
         <!--Settings-->
         <scene sceneID="IXL-su-p2l">
@@ -187,7 +282,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXc-U7-EZs" id="GqI-jv-hg8">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -298,6 +393,25 @@
             </objects>
             <point key="canvasLocation" x="66" y="-404"/>
         </scene>
+        <!--Notification-->
+        <scene sceneID="oKG-on-0br">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2L0-Wm-xj8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notification" image="notification" id="neJ-X1-soL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XAD-0X-Dm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wzY-9Y-4aW" kind="relationship" relationship="rootViewController" id="YBE-xH-VTW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AW3-A9-6bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="284.70764617691157"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gym" width="25" height="25"/>
@@ -305,6 +419,6 @@
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FT4-7D-uMm"/>
+        <segue reference="Irk-X8-wuw"/>
     </inferredMetricsTieBreakers>
 </document>

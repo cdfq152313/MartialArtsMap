@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		88FF4C1B457629937A27E88B /* Pods_MartialArtsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A938BB22DE7D304610D1A76C /* Pods_MartialArtsMap.framework */; };
+		B00999E21DC86C00003928BD /* NotiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00999E11DC86C00003928BD /* NotiTableViewController.swift */; };
+		B00999E41DC86C2C003928BD /* MyNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00999E31DC86C2C003928BD /* MyNoti.swift */; };
+		B00999E61DC87058003928BD /* AddNotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00999E51DC87058003928BD /* AddNotiViewController.swift */; };
 		B00C957F1DC36346007A2BCC /* myjson.json in Resources */ = {isa = PBXBuildFile; fileRef = B00C957E1DC36346007A2BCC /* myjson.json */; };
 		B00C95811DC3822E007A2BCC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C95801DC3822E007A2BCC /* SettingsViewController.swift */; };
 		B06F82CC1DC63462006D6A8D /* AddGYMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F82CB1DC63462006D6A8D /* AddGYMViewController.swift */; };
 		B097A41A1DBE1D7D00094A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097A4191DBE1D7D00094A46 /* AppDelegate.swift */; };
-		B097A41C1DBE1D7D00094A46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097A41B1DBE1D7D00094A46 /* ViewController.swift */; };
 		B097A41F1DBE1D7D00094A46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B097A41D1DBE1D7D00094A46 /* Main.storyboard */; };
 		B097A4211DBE1D7D00094A46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B097A4201DBE1D7D00094A46 /* Assets.xcassets */; };
 		B097A4241DBE1D7D00094A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B097A4221DBE1D7D00094A46 /* LaunchScreen.storyboard */; };
@@ -25,12 +27,14 @@
 		4DCC537FC1638BF010F9F4CC /* Pods-MartialArtsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartialArtsMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MartialArtsMap/Pods-MartialArtsMap.debug.xcconfig"; sourceTree = "<group>"; };
 		52A8023BDFF291880668937F /* Pods-MartialArtsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MartialArtsMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-MartialArtsMap/Pods-MartialArtsMap.release.xcconfig"; sourceTree = "<group>"; };
 		A938BB22DE7D304610D1A76C /* Pods_MartialArtsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MartialArtsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00999E11DC86C00003928BD /* NotiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotiTableViewController.swift; sourceTree = "<group>"; };
+		B00999E31DC86C2C003928BD /* MyNoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNoti.swift; sourceTree = "<group>"; };
+		B00999E51DC87058003928BD /* AddNotiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNotiViewController.swift; sourceTree = "<group>"; };
 		B00C957E1DC36346007A2BCC /* myjson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = myjson.json; sourceTree = "<group>"; };
 		B00C95801DC3822E007A2BCC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B06F82CB1DC63462006D6A8D /* AddGYMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGYMViewController.swift; sourceTree = "<group>"; };
 		B097A4161DBE1D7D00094A46 /* MartialArtsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MartialArtsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B097A4191DBE1D7D00094A46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B097A41B1DBE1D7D00094A46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B097A41E1DBE1D7D00094A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B097A4201DBE1D7D00094A46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B097A4231DBE1D7D00094A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +73,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B00999DF1DC86BAC003928BD /* GYM */ = {
+			isa = PBXGroup;
+			children = (
+				B06F82CB1DC63462006D6A8D /* AddGYMViewController.swift */,
+				B097A42B1DBE3FDD00094A46 /* GYMInfo.swift */,
+				B097A42D1DBE470800094A46 /* GYMTableViewController.swift */,
+				B0B9C0A71DC0CDE1006F42F7 /* GYMDetailViewController.swift */,
+			);
+			name = GYM;
+			sourceTree = "<group>";
+		};
+		B00999E01DC86BC5003928BD /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B00999E11DC86C00003928BD /* NotiTableViewController.swift */,
+				B00999E31DC86C2C003928BD /* MyNoti.swift */,
+				B00999E51DC87058003928BD /* AddNotiViewController.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		B097A40D1DBE1D7D00094A46 = {
 			isa = PBXGroup;
 			children = (
@@ -90,18 +115,15 @@
 		B097A4181DBE1D7D00094A46 /* MartialArtsMap */ = {
 			isa = PBXGroup;
 			children = (
+				B00999E01DC86BC5003928BD /* Notification */,
+				B00999DF1DC86BAC003928BD /* GYM */,
 				B097A4191DBE1D7D00094A46 /* AppDelegate.swift */,
-				B097A41B1DBE1D7D00094A46 /* ViewController.swift */,
 				B097A41D1DBE1D7D00094A46 /* Main.storyboard */,
 				B097A4201DBE1D7D00094A46 /* Assets.xcassets */,
 				B097A4221DBE1D7D00094A46 /* LaunchScreen.storyboard */,
 				B097A4251DBE1D7D00094A46 /* Info.plist */,
 				B00C957E1DC36346007A2BCC /* myjson.json */,
-				B097A42B1DBE3FDD00094A46 /* GYMInfo.swift */,
-				B097A42D1DBE470800094A46 /* GYMTableViewController.swift */,
-				B0B9C0A71DC0CDE1006F42F7 /* GYMDetailViewController.swift */,
 				B00C95801DC3822E007A2BCC /* SettingsViewController.swift */,
-				B06F82CB1DC63462006D6A8D /* AddGYMViewController.swift */,
 			);
 			path = MartialArtsMap;
 			sourceTree = "<group>";
@@ -231,11 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B097A41C1DBE1D7D00094A46 /* ViewController.swift in Sources */,
+				B00999E41DC86C2C003928BD /* MyNoti.swift in Sources */,
+				B00999E21DC86C00003928BD /* NotiTableViewController.swift in Sources */,
 				B06F82CC1DC63462006D6A8D /* AddGYMViewController.swift in Sources */,
 				B0B9C0A81DC0CDE1006F42F7 /* GYMDetailViewController.swift in Sources */,
 				B097A42C1DBE3FDD00094A46 /* GYMInfo.swift in Sources */,
 				B097A41A1DBE1D7D00094A46 /* AppDelegate.swift in Sources */,
+				B00999E61DC87058003928BD /* AddNotiViewController.swift in Sources */,
 				B097A42E1DBE470800094A46 /* GYMTableViewController.swift in Sources */,
 				B00C95811DC3822E007A2BCC /* SettingsViewController.swift in Sources */,
 			);
