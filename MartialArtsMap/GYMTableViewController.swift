@@ -11,6 +11,9 @@ import UIKit
 class GYMTableViewController: UITableViewController {
     
     var gymManager = GYMManager.getInstance()
+    var searchArray = [GYMInfo]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +22,9 @@ class GYMTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchController.searchResultsUpdater = self
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.dimsBackgroundDuringPresentation = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +45,12 @@ class GYMTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return gymManager.count()
+        if searchController.isActive{
+            return searchArray.count
+        }
+        else{
+            return gymManager.count()
+        }
     }
 
     
@@ -47,8 +58,14 @@ class GYMTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gymEntry", for: indexPath)
 
         // Configure the cell...
-        let item = gymManager.getItem(row: indexPath.row)
-        cell.textLabel?.text = item.name
+        if searchController.isActive{
+            let item = searchArray[indexPath.row]
+            cell.textLabel?.text = item.name
+        }
+        else{
+            let item = gymManager.getItem(row: indexPath.row)
+            cell.textLabel?.text = item.name
+        }
 
         return cell
     }
@@ -58,7 +75,12 @@ class GYMTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive{
+            return false
+        }
+        else{
+            return true
+        }
     }
     
 
@@ -71,7 +93,7 @@ class GYMTableViewController: UITableViewController {
             self.gymManager.delete(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        return [addAction, deleteAction]
+        return [deleteAction, addAction]
     }
 //    // Override to support editing the table view.
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -112,9 +134,33 @@ class GYMTableViewController: UITableViewController {
         if segue.destination is GYMDetailViewController{
             let controller = segue.destination as! GYMDetailViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            controller.gymInfo = gymManager.getItem(row: indexPath.row)
+            if searchController.isActive{
+                controller.gymInfo = searchArray[indexPath.row]
+            }
+            else{
+                controller.gymInfo = gymManager.getItem(row: indexPath.row)
+            }
         }
     }
  
 
+}
+
+extension GYMTableViewController:UISearchResultsUpdating{
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text{
+            filterContentForSearchText(searchText: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    func filterContentForSearchText(searchText: String){
+        if searchText == ""{
+            searchArray = gymManager.getArray()
+        }
+        else{
+            searchArray = gymManager.search(keyword: searchText)
+        }
+    }
 }

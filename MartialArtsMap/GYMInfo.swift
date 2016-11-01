@@ -100,6 +100,10 @@ class GYMManager{
         return gymArray.count
     }
     
+    public func getArray()->[GYMInfo]{
+        return gymArray
+    }
+    
     public func getItem(row:Int)->GYMInfo{
         return gymArray[row]
     }
@@ -116,8 +120,14 @@ class GYMManager{
         gymArray.insert(item, at: row)
     }
     
-    public func swapRow(_ row1:Int,_ row2:Int){
-        swap(&gymArray[row1], &gymArray[row2])
+    public func search(keyword:String)->[GYMInfo]{
+        var result = [GYMInfo]()
+        for item in gymArray{
+            if (item.name?.contains(keyword))! {
+                result.append(item)
+            }
+        }
+        return result
     }
 }
 
